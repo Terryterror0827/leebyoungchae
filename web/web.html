@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        header {
+            background-color: black;
+            text-align: center;
+            color: white;
+            margin:0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0px;
+            padding: 0;
+            background-image: url(image1.jpg);
+            background-attachment: fixed;
+            background-size: 100%;
+        }
+        main {
+            display:flex;
+            justify-content: space-around;
+        }
+
+        .product {
+            width: 30%;
+            margin: 20px;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        .foryou {
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            margin-left: 25%;
+            margin-right: 25%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+        .foryou a p {
+            padding: 3px;
+            font-size: 12px;
+            background-color: #fff;
+            color: black;
+        }
+    </style>
+    <title>분실물</title>
+</head>
+<body>
+
+    <header>
+        <h1>양서고 분실물 센터</h1>
+    </header>
+
+    <main>
+        <div class="product">
+            <img src="https://via.placeholder.com/150" alt="Product 1">
+            <h2>분실물1</h2>
+            <p>발견된 장소 : 매점</p>
+            <p>$19.99</p>
+        </div>
+
+        <div class="product">
+            <img src="https://via.placeholder.com/150" alt="Product 2">
+            <h2>분실물2</h2>
+            <p>발견된 장소 : 급식실</p>
+            <p></p>
+        </div>
+
+        <div class="product">
+            <img src="https://via.placeholder.com/150" alt="Product 1">
+            <h2>분실물3</h2>
+            <p>발견된 장소 : 운동장</p>
+            <p></p>
+        </div>
+
+
+        <!-- 추가 상품을 원하는 만큼 복사하여 붙일 수 있습니다. -->
+
+    </main>
+
+    <div class="foryou">
+        <h2>분실물을 잃어버렸다면?</h2>
+        <a href="testweb.html"><p><b>분실물 등록하기</b></p></a>
+    </div>
+
+    <script>
+        function addToCart(productId) {
+            // 여기에 실제로 장바구니에 상품을 추가하는 로직을 추가해야 합니다.
+            // 이 예제에서는 간단하게 알림창으로 상품 ID를 표시합니다.
+            alert('장바구니에 상품 ' + productId + '이(가) 추가되었습니다.');
+        }
+    </script>
+
+</body>
+</html>
