@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 16px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        #items-container {
+            margin-top: 20px;
+        }
+
+        .item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+    <title>분실물 보관 웹사이트</title>
+</head>
+<body>
+
+    <header>
+        <h1>분실물 보관 서비스</h1>
+    </header>
+
+    <main>
+        <form id="lostItemForm">
+            <label for="itemName">물품명:</label>
+            <input type="text" id="itemName" name="itemName" required>
+
+            <label for="description">설명:</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
+
+            <label for="contact">연락처:</label>
+            <input type="tel" id="contact" name="contact" required>
+
+            <button type="button" onclick="submitLostItem()">분실물 등록</button>
+        </form>
+
+        <div id="items-container"></div>
+    </main>
+
+    <script>
+        function submitLostItem() {
+            const itemName = document.getElementById('itemName').value;
+            const description = document.getElementById('description').value;
+            const contact = document.getElementById('contact').value;
+
+            if (itemName && description && contact) {
+                const newItem = document.createElement('div');
+                newItem.classList.add('item');
+                newItem.innerHTML = `
+                    <h2>${itemName}</h2>
+                    <p>${description}</p>
+                    <p><strong>연락처:</strong> ${contact}</p>
+                `;
+
+                document.getElementById('items-container').appendChild(newItem);
+
+                // 여기서는 실제로 서버에 데이터를 보내는 로직이 들어가야 합니다.
+                // 이 예제에서는 간단하게 화면에만 추가했습니다.
+                
+                // 데이터를 서버에 보내고 초기화
+                document.getElementById('lostItemForm').reset();
+            } else {
+                alert('모든 필드를 채워주세요.');
+            }
+        }
+    </script>
+
+</body>
+</html>
